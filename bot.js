@@ -4,6 +4,7 @@ require('dotenv').config();
 // Import libraries
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const masterId = process.env.MASTER_ID
 
 // Event listener when a user connected to the server.
 client.on('ready', () => {
@@ -17,7 +18,7 @@ client.on('message', message => {
 	let command = message.content.split(" ")[0];
 	let args = message.content.split(" ").slice(1);
 
-	if (message.author.id == '356302176060047361') {
+	if (message.author.id == masterId) {
 		if (command == "!delete") {
 			message.channel.bulkDelete(args[0]).then(() => { message.channel.send("Deleted "+args[0]+" messages.").then(msg => msg.delete(1000));
 			}).catch(console.error);
