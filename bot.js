@@ -22,7 +22,9 @@ client.on('message', message => {
 		if (command == "!delete") {
 			message.channel.bulkDelete(args[0]).then(() => { message.channel.send("Deleted "+args[0]+" messages.").then(msg => msg.delete(1000));
 			}).catch(console.error);
-		}
+		} else if (command == "!welcome") {
+      message.channel.send("Selamat Datang!");
+    }
 	} else {
 		console.log(message.author.username)
 		return;
