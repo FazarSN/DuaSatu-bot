@@ -41,6 +41,12 @@ client.on('message', message => {
 			console.log("clear done");
 		} else if (command == "!testbot") {
 			console.log("Tested!");
+		} else if (command == "!sendlink") {
+			console.log("sending message");
+			var judul = "Episode 6 - F.R.I.E.N.D.S"
+			var listennotes = "https://lnns.co/ciXEQK3bafI";
+			var spotify = "https://open.spotify.com/episode/3YGGGTN0NBAhbEEdddmjN5?si=qxRhLmhYTYyXBxpAdMqbbw";
+			message.channel.send(judul + " \n\n listennotes : " + listennotes + "\n spotify : " + spotify, {files: ["episode-6.jpg"]});
 		}
 	} else {
 		console.log(message.author.id + " - " + message.author.username)
