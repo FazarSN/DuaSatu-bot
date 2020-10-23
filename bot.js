@@ -42,6 +42,7 @@ client.on('message', message => {
 		} else if (command == "!testbot") {
 			console.log("Tested!");
 		} else if (command == "!sendlink") {
+			message.channel.bulkDelete(1);
 			console.log("sending message");
 			var judul = "Episode 6 - F.R.I.E.N.D.S"
 			var listennotes = "https://lnns.co/ciXEQK3bafI";
